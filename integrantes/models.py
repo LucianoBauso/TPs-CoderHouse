@@ -16,7 +16,12 @@ class Auto(models.Model):
     anio = models.IntegerField()
     color = models.CharField(max_length=15)
 
+    def __str__(self):
+        return self.modelo, self.patente
+
 class Casa(models.Model):
     direccion = models.CharField(max_length=30)
     altura = models.IntegerField()
-    integrantes = models.ExpressionList(Integrante)
+
+    def __str__(self):
+        return self.direccion, self.altura
